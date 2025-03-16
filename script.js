@@ -12,9 +12,8 @@ document.getElementById('join-btn').addEventListener('click', function() {
   });
 
   // Play video with sound after user interaction
-  video.play(); // This will now work with sound since the user clicked
-  const meow = new Audio('https://www.myinstants.com/media/sounds/cat-meow-1.mp3');
-  meow.play();
+  video.play();
+  playMeow(); // Play meow sound on video start
 
   splash.style.opacity = '0';
   setTimeout(() => {
@@ -29,8 +28,8 @@ document.getElementById('copy-btn').addEventListener('click', function() {
     const feedback = document.getElementById('copy-feedback');
     feedback.classList.remove('hidden');
     setTimeout(() => feedback.classList.add('hidden'), 2000);
-    const meow = new Audio('https://www.myinstants.com/media/sounds/cat-meow-1.mp3');
-    meow.play();
+    playMeow(); // Play meow sound on copy
+    playWoof(); // Play woof sound for fun
   });
 });
 
@@ -45,3 +44,35 @@ function rotateImage() {
 }
 
 setInterval(rotateImage, 5000); // Change image every 5 seconds
+
+// Audio Functions (Fix for CORS or URL issues)
+function playMeow() {
+  const meow = new Audio('https://www.myinstants.com/media/sounds/cat-meow-1.mp3');
+  meow.onerror = () => console.log('Meow sound failed to load');
+  meow.play().catch(error => console.log('Meow play error:', error));
+}
+
+function playWoof() {
+  const woof = new Audio('https://www.myinstants.com/media/sounds/dog-bark.mp3');
+  woof.onerror = () => console.log('Woof sound failed to load');
+  woof.play().catch(error => console.log('Woof play error:', error));
+}
+
+// Particle Effects
+particlesJS('particles-js', {
+  particles: {
+    number: { value: 80, density: { enable: true, value_area: 800 } },
+    color: { value: '#ff9900' },
+    shape: { type: 'circle' },
+    opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+    size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+    line_linked: { enable: false },
+    move: { enable: true, speed: 2, direction: 'bottom', random: false, straight: false, out_mode: 'out', bounce: false }
+  },
+  interactivity: {
+    detect_on: 'canvas',
+    events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+    modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+  },
+  retina_detect: true
+});
