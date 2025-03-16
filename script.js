@@ -38,7 +38,7 @@ document.getElementById('copy-btn').addEventListener('click', function() {
 
 // Image rotation for dancing-cat
 const dancingImage = document.getElementById('dancing-image');
-const images = ['becdog.gif', 'bec2.jpeg', 'becdog.gif', 'bec3.jpeg']; // Add more .jpeg files as needed
+const images = ['becdog.gif', 'bec2.jpg', 'becdog.gif', 'bec3.jpg']; // Add more .jpeg files as needed
 let currentIndex = 0;
 
 function rotateImage() {
