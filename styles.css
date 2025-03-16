@@ -5,12 +5,20 @@ body {
   background-size: 200px;
   color: #4a2c0f;
   text-align: center;
-  animation: bg-move 20s infinite linear;
+  animation: bg-move 20s infinite linear, bg-rotate 30s infinite linear;
 }
 
 @keyframes bg-move {
   0% { background-position: 0 0; }
   100% { background-position: 200px 200px; }
+}
+
+@keyframes bg-rotate {
+  0% { background-image: url('becdog.gif'); }
+  25% { background-image: url('bec2.jpeg'); }
+  50% { background-image: url('becdog.gif'); }
+  75% { background-image: url('bec3.jpeg'); }
+  100% { background-image: url('becdog.gif'); }
 }
 
 .splash {
@@ -32,6 +40,7 @@ body {
   background-size: 200px;
   filter: blur(5px);
   z-index: 1;
+  animation: bg-rotate 30s infinite linear;
 }
 
 .splash-content {
@@ -78,6 +87,13 @@ h1 {
   font-size: 3em;
   color: #ff9900;
   text-shadow: 2px 2px #4a2c0f;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 h2 {
@@ -180,14 +196,9 @@ h2 {
   box-shadow: 0 0 15px #ff0000;
 }
 
-#play-video-btn {
-  margin-top: 10px;
-  display: block;
-}
-
 video {
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 20px; /* Rounded edges for video */
   box-shadow: 0 0 10px #ff9900;
 }
 
@@ -200,6 +211,7 @@ video {
 .dancing-cat img {
   width: 200px;
   margin-top: 20px;
+  border-radius: 20px; /* Rounded edges for images */
 }
 
 .cat-bounce {
@@ -225,4 +237,18 @@ video {
   0% { transform: scale(0.5); opacity: 0; }
   60% { transform: scale(1.1); opacity: 1; }
   100% { transform: scale(1); }
+}
+
+/* Particle Effects for Extra Magic */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.rounded-image {
+  border-radius: 20px; /* Ensure all images have rounded edges */
 }
