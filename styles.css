@@ -15,9 +15,9 @@ body {
 
 @keyframes bg-rotate {
   0% { background-image: url('becdog.gif'); }
-  25% { background-image: url('bec2.jpeg'); }
+  25% { background-image: url('bec2.jpg'); }
   50% { background-image: url('becdog.gif'); }
-  75% { background-image: url('bec3.jpeg'); }
+  75% { background-image: url('bec3.jpg'); }
   100% { background-image: url('becdog.gif'); }
 }
 
