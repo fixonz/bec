@@ -1,6 +1,7 @@
 document.getElementById('join-btn').addEventListener('click', function() {
   const splash = document.getElementById('splash');
   const main = document.getElementById('main');
+  const video = document.getElementById('bec-video');
   
   // Confetti burst
   confetti({
@@ -10,19 +11,16 @@ document.getElementById('join-btn').addEventListener('click', function() {
     colors: ['#ff9900', '#4a2c0f', '#f5e8c7']
   });
 
+  // Play video with sound after user interaction
+  video.play(); // This will now work with sound since the user clicked
+  const meow = new Audio('https://www.myinstants.com/media/sounds/cat-meow-1.mp3');
+  meow.play();
+
   splash.style.opacity = '0';
   setTimeout(() => {
     splash.classList.add('hidden');
     main.classList.remove('hidden');
   }, 1000);
-});
-
-document.getElementById('play-video-btn').addEventListener('click', function() {
-  const video = document.getElementById('bec-video');
-  video.play();
-  this.style.display = 'none';
-  const meow = new Audio('https://www.myinstants.com/media/sounds/cat-meow-1.mp3'); // Changed to cat sound
-  meow.play();
 });
 
 document.getElementById('copy-btn').addEventListener('click', function() {
@@ -31,7 +29,7 @@ document.getElementById('copy-btn').addEventListener('click', function() {
     const feedback = document.getElementById('copy-feedback');
     feedback.classList.remove('hidden');
     setTimeout(() => feedback.classList.add('hidden'), 2000);
-    const meow = new Audio('https://www.myinstants.com/media/sounds/cat-meow-1.mp3'); // Changed to cat sound
+    const meow = new Audio('https://www.myinstants.com/media/sounds/cat-meow-1.mp3');
     meow.play();
   });
 });
