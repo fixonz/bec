@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$BEC - Bacon Eggs and Cheese</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Splash Page -->
+  <div id="splash" class="splash">
+    <div class="splash-bg"></div>
+    <div class="splash-content">
+      <h1 class="glow">$BEC</h1>
+      <p class="glow">Bacon Eggs and Cheese - The Dancing Dog Coin!</p>
+      <button id="join-btn" class="btn neon-btn glow">Join the Pack</button>
+    </div>
+  </div>
+
+  <!-- Main Page -->
+  <div id="main" class="container hidden">
+    <h1 class="bounce-in">$BEC - The Tastiest Dog Coin on Solana</h1>
+    <p class="bounce-in">Woof woof! Meet Bacon Eggs and Cheese, the dancing doggo taking over crypto!</p>
+
+    <!-- YouTube Video Embed -->
+    <div class="video-container bounce-in">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/PhzimmJ9oAs?autoplay=1&loop=1&playlist=PhzimmJ9oAs" 
+        title="Bacon Eggs and Cheese Dance" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Contract Address -->
+    <div class="contract bounce-in">
+      <p>Contract Address: <span id="contract-address">6nAJ6ZimrUFxXjBH7Tsj4zVp1oARo2uafz7dLGgMpump</span></p>
+      <button id="copy-btn" class="btn neon-btn">Copy to Clipboard</button>
+      <p id="copy-feedback" class="hidden">Woof! Copied!</p>
+    </div>
+
+    <!-- Dexscreener Chart -->
+    <div class="chart-container bounce-in">
+      <h2>$BEC Chart</h2>
+      <div id="dexscreener-embed">
+        <iframe 
+          src="https://dexscreener.com/solana/C6S4cC32EdQCQTTSHKskzQZtM4SuEcbPEnSBK67mxyx2?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=light&chartStyle=0&chartType=usd&interval=15"
+          frameborder="0">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons bounce-in">
+      <a href="https://discord.gg/YOUR_DISCORD_LINK" target="_blank"><button class="btn neon-btn discord">Join the Pack</button></a>
+      <a href="https://dexscreener.com/solana/6nAJ6ZimrUFxXjBH7Tsj4zVp1oARo2uafz7dLGgMpump" target="_blank"><button class="btn neon-btn dexscreener">Chart It Up</button></a>
+      <a href="https://www.youtube.com/watch?v=PhzimmJ9oAs" target="_blank"><button class="btn neon-btn youtube">Dance Party</button></a>
+    </div>
+
+    <!-- Grok's Special Touch -->
+    <div class="dancing-dog bounce-in">
+      <img src="becdog.gif" alt="Dancing BEC Dog" class="dog-bounce">
+      <p>BEC: Breakfast, Entertainment, Crypto!</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
